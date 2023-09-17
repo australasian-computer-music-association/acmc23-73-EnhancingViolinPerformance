@@ -188,7 +188,7 @@ optimal one. However, in a live performance setting, these adhesives
 were not secure enough and both the casing and the sensors shifted
 around too much.
 
-![Examples of 3D printed casings](media/3d-casings.png){#fig:3d casings}
+![Examples of 3D printed casings](media/3d-casings.png){#fig:3d-casings}
 
 ## Software Design
 
