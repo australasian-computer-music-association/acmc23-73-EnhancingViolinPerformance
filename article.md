@@ -15,169 +15,409 @@ author:
       email: aphony@fakemail.com
 author-header: F. Author & A. Phony
 abstract: |
-    This document is a sample article manuscript and instructions for using the Markdown submission template for Chroma, Journal of the Australasian Computer Music Association.
-
-    It is available under a Creative Commons Zero v1.0 Universal license, so you are free to use it in other journals, documents, or any other purpose.
+    This paper presents a detailed description of the development of a wireless audio-visual interface that is integrated with a violin bow. 
+    This interface is a work-in-progress prototype resulting from a practice-based research project into optimal physical design and software mappings for the virtuoso string player.
+    As an augmented instrument, this interface aims at extending the existing skill set of the performer. Moving away from gestural analysis approaches, we focus more directly on optimising real-time performer interaction and control for violin performance, using bow hand fingers to manipulate the interface. A further novel aspect is the equal emphasis placed on both the audio and visual real-time processing which unlocks potential for new compositional possibilities and interdisciplinary performance situations.
+    The interface is intentionally minimally invasive and wireless so as to reduce performer movement restrictions as well as permanent modifications to the violin bow. We contextualize our research process and outcomes within two performance situations, basing future design possibilities on the evaluation of an expert violinist.
 anonymous: 'false'
 bibliography: 'references'
 papersize: a4
 classoption: 12pt
 secnumdepth: 3
 reference-section-title: 'References'
-year: YYYY
+year: 2023
 volume: XX
 number: X
 article-no: X
-date: 'YYYY-MM-DD'
-accepted-date: 'YYYY-MM-DD'
-published-date: 'YYYY-MM-DD'
+date: '2023-07-13'
+accepted-date: '2023-08-04'
+published-date: '2023-10-09'
 ---
 
 # Introduction
 
-This document is the instructions for using the Markdown submission template for Chroma, Journal of the Australasian Computer Music Association and doubles as a sample article. The primary submission format for our journal is [Markdown](https://daringfireball.net/projects/markdown/), a light-weight plain text format for writing documents. The advantage of Markdown over formats such as `.docx` is that it can be easily and predictably converted to HTML (for viewing on the [journal website](https://journal.computermusic.org.au)) or an attractive PDF (for downloading or printing).
+Acoustic bowed string instruments have been enhanced with a variety of
+technologies as a means of gestural analysis and new expressive
+possibilities by many researchers[@overholt:advancements]
+[@young:hyperbow] [@bevilacqua:augmented] [@machover:hyperinstrument]
+[@rose:interactive] [@kimura:extracting]. Primarily, these technologies
+have consisted of various sensors analysing the string player's physical
+idiosyncrasies as well as the inherent physics of the instrument
+itself[@overholt:musical][@miranda:new]. The chosen sensors are
+integrated with the body or the bow of the instrument and in some cases,
+the performing artist[@reid:women][@van:musicjacket]. The collected
+sensor data is mapped within an appropriate musical software environment
+aiming to create a novel, meaningful and expressive creative output.
+Although multiple and varied approaches to augmenting the acoustic
+violin have been developed, our prototype strives to explore the space
+between real-time normal player gestural analysis and new digital
+instrument design, emphasising interactivity and minimal invasion.
 
-Markdown lets you specify headings, lists, code segments, images, quotations and, of course, divide your text into paragraphs. You don't get to choose the font or size of text---that is defined by our journal website and the programs that translates the article manuscript into a PDF file. These programs for convertinng the manuscript to HTML and PDF use a tool called [pandoc](https://pandoc.org). You can install pandoc on your system if you like, and convert your article to the standard journal format.
+In this paper we discuss the development of a new wireless audio-visual
+interface with design considerations that focus on optimal sensor
+placement for real-time performer right hand manipulation and gestural
+analysis. We discuss our approaches to sensor choices as well as
+detailing our software design parameters which place equal importance on
+both audio and visual software mappings. We present our work-in-progress
+interface within the context of two distinctly varied performances,
+reflecting on each situation from the first author's
+researcher/practitioner perspective and concluding with future creative
+design and output directions.
 
-You don't need a specific program to edit a Markdown document, they are simply plain text files so you can just use notepad (Windows) or textedit (MacOS). That said, many people like to use a text editor that displays the syntax with nice colours or provides a preview of the rendered document in HTML format. I happen to be editing this document with [VSCode](https://vscode.dev), which can provide a side-by-side HTML preview, or there are online editors such as [HackMD](https://hackmd.io) or [Dillinger](https://dillinger.io).
+![Wireless Audio-Visual Violin Bow Interface](media/newPrototype.png){#fig:newPrototype}
 
-![Editing this Markdown file in VSCode and viewing a preview.](media/markdown-editing.png)
+# RELATED WORK
 
-You are free to inspect the [source code](https://github.com/cpmpercussion/chroma-template) for this template, and if you are setting up another journal or authoring scholarly articles, the templates and this text are licensed under a [Creative Commons Zero v1.0 Universal](https://github.com/cpmpercussion/chroma-template/blob/main/LICENSE) license.
+Miranda and Wanderley categorise different types of musical interfaces,
+with augmented, hyper or hybrid instruments being those that extend the
+possibilities of an acoustic instrument through the addition of multiple
+sensors, whilst retaining the instruments original sound and performance
+gestures[@miranda:new]. Significant developments include Diana Young's
+*Hyperbow Controller*[@young:hyperbow][@young:classification], Machover
+and Chung's *Hypercello*[@levenson:taming][@paradiso:musical], *vBow*
+developed by Nichols[@nichols:vbow] and Bevilaqua's *Augmented
+Violin*[@bevilacqua:augmented].With the sensors integrated directly into
+the acoustic instrument, these new interfaces are designed for detailed
+analysis of intricate real-time playing gestures[@bevilacqua:augmented],
+augmenting the possibilities of the instrument, whilst preserving the
+performer's natural relationship with the instrument.
 
-## Isn't this all very complicated?
+Building on these concepts but with the design consideration of minimal
+invasion to the acoustic instrument are Kimura's *Augmented Violin
+Glove*[@kimura:extracting] and Reid's *MIGSI*[@Reid:2016] which hold the
+sensor technology inside a custom designed housing that is made to be
+both easily integrated and removed. Bevilacqua discusses another
+approach to augmenting an acoustic instrument which incorporates
+interactive sensors such as FSRs, push buttons and
+sliders[@bevilacqua:augmented].
 
-At this point, you might be wondering why we bother with all this Markdown nonsense. After all, haven't journals gotten by with Microsoft Word documents for quite a while now? And what about LaTeX?
+Although both approaches aim at enhancing and expanding the possibility
+of an acoustic instrument[@machover:interactive], the latter adds new
+gestures for the
+performer[@bevilacqua:augmented][@overholt:advancements]. Ko and
+Oehlberg's *TRAVIS II*[@ko:touch], allows the performer to trigger a
+selection of audio and visual presets via four FSRs. The interface
+technology, designed to augment the fingerboard of the violin, with the
+exception of the custom made sensing fingerboard itself, by using 3D
+printed clamps allows for complete removal of all other sensor
+technology from the body of the violin . Overholt's *The Overtone
+Fiddle*[@overholt:overtone] combines the retention of traditional
+technique as well as introducing new extended performance gestures.
+Though the Overtone Fiddle allows performer control through traditional
+violin technique, it is an entirely new custom designed instrument with
+extensive augmentation capabilities. Despite the variations in physical
+design considerations, these interfaces all communicate sensor data to
+appropriate musical software environments which is then used to
+transform the traditional acoustic capabilities of the instrument into
+new musical outcomes[@machover:hyperinstrument]. These two design
+components are therefore of equal significance within the development of
+a new musical interface. In the case of concurrent dynamic audio and
+visual software mappings, various approaches have been explored,
+including Ali Momeni and Cyrille Henry's introduction of a *Dynamic
+Independent Visual Mapping Layer*[@momeni:dynamic], Jaroslaw
+Kapuscinski's *Intermedia*[@savery:intermedia][@kapuscinski:mudras]
+Bert Bongers and Yolande Harris' *Video-Organ*[@bongers:structured] as
+well as the more recent *AirSticks*[@ilsar:airsticks] by Alon Ilsar with
+real-time interactive visuals designed by Andrew Bluff, Matthew Hughes
+and others. Our work-in-progress ambitiously aims at incorporating
+elements from all of these design approaches into one small yet robust
+musical interface.
 
-Yes, a typical academic journal accepts articles in Word (`.docx`) formats, but these journals have production editors to convert accepted manuscripts into PDF print-ready articles and (sometimes) a more accessible web page. These editors are paid with subscription fees paid by universities or with publications fees paid by authors. _Chroma_ is a fully-open access, scholar-run journal, with no subscripton or publication fees so we prefer to use a template that provides nice PDF and web versions of manuscripts without editing. 
+# Design Motivation
 
-Many journals and conferences (particularly in STEM fields) accept articles in LaTeX format which provides a nice PDF output (in fact, pandoc uses LaTeX to build our PDF outputs). This can be a solution for some authors, but  many others authors would run a mile rather than learn LaTeX so other solutions are needed.
+Coming from a background in classical and jazz violin as well as
+composition and music technology, the first author spent a considerable
+amount of time experimenting with various hardware technologies and
+software environments. These included electric instruments, multi
+effects pedals and various pickups. Throughout their academic and
+professional performing arts career, the first author shifted towards an
+intermedia creative practice, which combined visuals and audio and
+branching away from commercially available hardware augmentations. The
+desire to create an audio-visual, wireless interface that would fit on
+the frog of the violin bow came from wanting to move away from the
+visual aesthetic of long cables, bulky pedal rigs and other visually and
+physically restrictive technologies.
 
-There are very few academic journals or conferences with Markdown submission templates, but we think that it is a positive move towards simpler and lower-cost community-led publishing.
+The goal was to create a custom built controller with real-time audio
+and visual processing capabilities that could be manipulated with just
+the right hand fingers of an expert violinist, creating a minimally
+invasive, cost effective, mobile version which effectively combined
+already existing technologies.
 
-# Syntax
+This design would also allow for easier interdisciplinary
+collaborations, where the violinist could effortlessly move around the
+stage and interact with dancers, actors or any digital set component
+such as a projection surface or lighting design. As a small and mobile
+device, the interface would retain a sense of mystery and magic within a
+live performance, where the audience would not be distracted by the
+interface and the process of audio and visual manipulation. An aesthetic
+that is otherwise very present when using an electric instrument or a
+foot pedal. As a custom built controller, the interface would be
+designed around the physical and technical capabilities of the
+violinist, with optimal sensor placement and a software mapping system.
 
-We cover a brief explanation of the main syntax features below, but more in-depth documentation can be found at [CommonMark](https://commonmark.org/help/).
+# Implementation
 
-You can write section headings in your article by typing `#`, which corresponds to "Heading 1" in Word or `\section{}` in LaTeX. Sub-sections can be produced with `##` and so on.
+We began to design the physical interface by testing a variety of
+different sensors with the Arduino and Max/MSP software. Short snippets
+of live violin audio were recorded and then manipulated by the sensors
+which were either attached to a breadboard or simply laid out on a desk.
+This physical and software prototyping process lasted about three
+months, involving a cyclical practice based research approach of
+practice, theory and evaluation[@candy:practice][@candy:guide], where an
+idea for an audio-visual work would be realised and tested, accumulating
+in a series of Max abstractions and an Arduino sketch that could then be
+used in a larger, more cohesive composition. As the music became
+predominantly loop based, we decided to shift to Max for Live, and
+control its parameters via the live object model[^1].
 
-You can use produce emphasised text with underscores `_italics_`, using bold text is possible, but not considered good style.
+## Physical Design
 
-You can include inline code with backticks, e.g., `` `code` `` produces `code`. For a longer code block, start and finish it with three backticks (`` ``` ``), e.g.:
+The goal of creating this interface was to make a real-time controller
+capable of audio and visual processing through direct manipulation of
+right hand fingers. As a starting point of the design process, we began
+working with just two controller sensors. These were a potentiometer
+slider[^2], and a four button keypad[^3]. These were chosen for ease of
+both physical interaction and initial software mappings. In order to
+facilitate the wireless design consideration, we chose to work with the
+XBee ZB Zigbee wireless modules[^4], mounting the radio module directly
+onto an Arduino Fio board.
 
-```{caption="Here's a caption for the code snippet" .scheme} 
-(bind-func sine:DSP
-  (lambda (in time chan dat)
-    (* .1 (cos (* (convert time) .04)))))
-```
+Another design consideration was making sure the interface was easily
+removable from the frog of the bow. This was important as the interface
+is intended for use by an expert practitioner and their professional
+instrument setup. This was enabled through the design of a series of 3D
+printed casings, that slid on and off the bow. Multiple iterations were
+needed, as the rigidity of the casings did not allow for slight
+variations in bow frog dimensions. The sensors were then mounted onto
+the chosen casing using various adhesives. As an initial physical
+prototyping model, this approach worked well, allowing for rapidly
+exploring different sensor placement positions in order to find an
+optimal one. However, in a live performance setting, these adhesives
+were not secure enough and both the casing and the sensors shifted
+around too much.
 
-You can type the language name straight after the opening backticks to enable syntax highlighting.
+![Examples of 3D printed casings](media/3d-casings.png){#fig:3d casings}
 
-You can include hyperlinks like so: `[link text](https://computermusic.org.au)`.
+## Software Design
 
-Footnotes are referenced with a caret symbol (`[^1]`) (see [pandoc manual](https://pandoc.org/MANUAL.html#footnotes)) for instance:
-```markdown
-Here's a sentence[^1].
+After successful data communication between the sensors, Arduino and Max
+software was established, we focused on deciding how to best approach
+software mappings in order to achieve robust and creatively meaningful
+results. We decided to approach this problem using a practice led
+trajectory, where a live audio-visual work for solo violin and the
+interface was used as a means to develop a series of criteria for
+software mappings and compositional approaches[@candy:practice].
 
-[^1]: And here's the footnote.
-```
-Which looks like this: Here's a sentence[^1].
+![An abstraction for receiving sensor data from Arduino software](media/serial_max.png){#fig:serial_max}
 
-[^1]: And here's the footnote.
+### Audio Mapping
 
-Numbered and un-numbered lists are very easy, just use `-` to indicate unnumered list items, and numbers, e.g., `1.` to indicate numbered list items.
+The four buttons functioned as toggles, with the data mapped to trigger
+on and off signals. This data was used to control various parameters in
+Ableton using the live.object and live.path objects. These included
+triggering clip recordings, looping on and off and deleting recorded
+clips in real-time. The potentiometer slider data was scaled in a
+variety of ways, depending on the current section of the composition.
 
-## Figures and Tables
+At times, the data was scaled to receive floats between 0. and 100.,
+where the range of those numbers would control sliders of in-built Max
+for Live objects, such as the Dry/Wet signals of the Insinkorator or
+Dual Harmonizer. In other instances, the slider data would be scaled to
+a range between 0 and 3, acting as a secondary series of buttons, with
+each integer linked to a direct parameter, such as opening and closing
+of a gate object or starting and stopping playback of a buffer.
 
-The syntax for including an image is similar to a link but with an exclamation point before the first bracket. The text inside the square brackets is interpreted as the figure caption. For example:
-```
-![Synthesisers by Charles Martin (Public Domain)](media/synthesisers.jpg)
-```
+![Max for Live patch with audio mappings](media/audio.png){#fig:audio width="1\\columnwidth"}
 
-![Synthesisers by Charles Martin (Public Domain)](media/synthesisers.jpg)
+### Visual Mapping
 
-Tables follow the markdown table syntax, which uses a lot of `|` and `-` symbols. The table caption goes after a `:` symbol just after the table. This syntax is specific to [pandoc](https://pandoc.org/MANUAL.html#tables).
+All visual elements for this initial prototype were processed in Jitter
+and consisted of video footage. A variety of processing techniques were
+explored, such as cross-fading between multiple video streams and
+brightness and controlling contrast and saturation using the jit.brcosa
+object. These techniques were well suited to being controlled by the
+potentiometer slider with its analog data stream being easily scaled to
+range from 0. to 1.
 
-| Instrument | Keys | Strings | Antennae |
-|------------|------|---------|----------|
-| Piano      | 88   | 230     | 0        |
-| Guitar     | 0    | 6       | 0        |
-| Theremin   | 0    | 0       | 2        |
-| Trumpet    | 3    | 0       | 0        |
-Table: A table of musical instrument configurations
+The biggest mapping challenge was switching or moving between
+parameters, much like any transition within a piece. Attempting to
+control multiple parameters simultaneously proved to be somewhat chaotic
+and less meaningful. One solution was to outline distinct sections
+within each piece, marked by a counter object in Max. At specific
+moments throughout a piece, the counter would trigger an opening or
+closing of a gate object, that would transition from current section to
+the next. This approach eased the load off the two existing sensors and
+allowed for more elaborate mappings within each section. However, this
+also created a very rigid structure, leaving little room for
+spontaneity.
 
-The LaTeX template for that generates the PDF files tends to "float" figures and tables, so they may not end up _precisely_ where put in text. It's usually better just to let this happen and not try to override it.
+![Max for Live patch with video mappings using Jitter](media/video.png){#fig:video width="1\\columnwidth"}
 
-# Citations
+# Creative Outputs
 
-Citations are supported in Markdown and pandoc (see documentation [here](https://pandoc.org/MANUAL.html#citations)).  In this template, the references are listed in `references.bib` in BibTeX format. Citations look like `[@foo]` where `foo` is the id of the BibTeX entry.
+We developed and performed two works using the initial working
+prototype. The first performance situation the interface was used for
+was a demonstration video that was filmed in June of 2022. The piece was
+a combination of a free solo violin improvisation as well as some
+predetermined structural constraints and a prerecorded audio sample
+played on viola, which ultimately dictated the harmonic structure and
+mood of the work. The second performance situation was a cross
+university collaboration between University of Technology Sydney and
+Macquarie University. A robotic arm was used to visualise the first
+author's playing in real-time using paint on canvas. This performance
+situation took place over one day with multiple iterations of the piece
+and visualisations.
 
-Here's one example [@Collins:2008fr]. Some other sources include [@Fiebrink:2007cz], and [@Roads:1996ve]. Complex citations are possible too [e.g., @Worrall:1999kl, pp. 33-35; also @Collins:2008fr, ch. 1].
+## Demonstration Recording
 
-This template includes a style file, `apa.csl`, to define the APA style we use in _Chroma_.
+In June of 2022A, we filmed a live recording of a demonstration video at
+the University of Technology Sydney . The composition for solo violin
+and interface was approximately four minutes in length, and consisted of
+prerecorded viola samples, live audio sampling and processing and live
+video processing. The composition was a culmination of the theoretical
+frameworks developed throughout the period of January 2022 up to June of
+that year. Musically, the composition was a combination of an
+improvisation and structured sections, dictated by a Max for Live patch.
+There were loosely three sections;
 
-You can also just type citations manually into the markdown file, and if the manuscript has been received as a Word document and converted to markdown, the references will be manually entered. In this case, add a section (`# References`) at the end of the document with the references after that. It's a good idea to add a _little_ bit of manual LaTeX code to make the references look right with hanging indents:
+A free improvisation with live audio sampling and processing using the
+Instinkorator audio effect. The recording, playback and looping all
+triggered by push buttons on the interface. The video footage was
+initiated with the same push button used to process audio. Brightness
+and cross fading was controlled by the potentiometer slider.
 
-    # References
-    
-    ```{=latex}
-    \begin{hangparas}{1.5em}{1}
-    ```
-    
-    Worrall, D. (1999). Cyberspace and sound. Proceedings of the Australasian Computer Music Conference.
-    
-    (other references)
-    
-    ```{=latex}
-    \end{hangparas}
-    ```
+The second section was triggered by a different push button, which
+triggered the playback of a prerecorded viola melody. Real-time
+improvised violin melodies were layered on top of this sample, with
+further layers created by short real-time sample playback. Each sample
+being between 10 and 30 seconds in length, with various effects, such as
+reverse playback, changed playback rate and various harmonizers. For the
+video footage, this section switched to saturation, but cross fading
+remained.
 
+The last section deleted the short audio samples one by one, thinning
+out the layers and creating a natural decrease in volume, descending
+into an ending. The video footage played out to the end and came to a
+natural pause as the patch stopped.
 
+Link to video [here](https://www.dropbox.com/s/yk6e073fcjxtjfu/NIME_demo.mp4?dl=0)
 
-# Header block
+![Demonstration video recording](media/Performance1.png){#fig:Performance1 width="0.6\\columnwidth"}
 
-The strange looking section of text at the start of this file contains the metadata which produces the title, authors, abstract and some other details for your article. It's in a format called [yaml](https://yaml.org) which is supposed to be human-friendly but is sometimes tricky to get right. A minimal article example would have:
+## Reflection
 
-```{caption="The header block for this template" .yaml}
----
-title: 'Article Title'
-author: 
-    - name: Author Name
-      affiliation: Author Affiliation
-      city: City
-      country: Country
-      email: author.name@email.com
-author-header: A. Name (short version of author name)
-abstract: |
-    Article abstract
-anonymous: 'false'
-bibliography: 'references'
-papersize: a4
-classoption: 12pt
-reference-section-title: 'References'
-year: YYYY
-volume: XX
-number: X
-article-no: X
-date: 'YYYY-MM-DD'
-accepted-date: 'YYYY-MM-DD'
-published-date: 'YYYY-MM-DD'
----
-```
+With most of the design focus being centered on the physical
+implementation and software mappings, the musical development was
+unfortunately a secondary priority. This became very evident when the
+piece became predominantly a free improvisation, with harmonic and
+rhythmic elements consisting solely of the prerecorded viola sample.
+Manipulating the sensors with right hand fingers whilst playing also
+proved to be surprisingly challenging, partially due to the physical
+design of the interface, where the sensors were not optimally placed for
+efficient manipulation, but also due to the mental load of performing
+and incorporating new gestures into that performance required to
+manipulate the interface sensors.
 
-This section is set up this way to work with pandoc which expects the YAML metadata to be in this specific format (see the [pandoc manual](https://pandoc.org/MANUAL.html#extension-yaml_metadata_block)).
+## Performance Visualisation
 
-Some Markdown preview software knows what to do with the YAML metadata, some will ignore it, and some will just print it out as if it is normal text, so if it doesn't appear correctly in your text editor that may not be a problem.
+Similar to the demonstration video, this was mostly a free
+improvisation, with a structure revolving around a time constraint of
+approximately 8 minutes. This is approximately how long it took the
+robotic arm to fill the canvas using all four available paint colours.
+Audio effects were worked out to align with paint color changes and the
+corresponding layering and mixing of paint on canvas. Hence, the piece
+always began with solo violin and black paint.
 
-# Conclusions
+When the robotic arm was ready to add a blue color to the canvas, a push
+button on the audio-visual interface was used to trigger an addition of
+the Max for Live dual harmonizer audio effect. The potentiometer slider
+was used alternate between two octaves below and two octaves above the
+real-time audio from the violin. This thickened out the sonic texture,
+aligning with the painted canvas.
 
-Writing articles in Markdown can be a breath of fresh air compared to traditional word processors, but there can be some frustrations in terms of installing special software (e.g., pandoc) and in configuring the templates to create the right kind of outputs.
+From the onset of the piece, short live audio samples of approximately
+10-20 seconds in length were being recorded. Each with a separate audio
+effect. Using a push button again, the dual harmonizer was gated off and
+the recorded audio samples would start looping one by one, thickening
+out the sonic texture more and more, as the robotic arm added yellow and
+then red. The piece finished on a large crescendo as the canvas filled
+with vibrant colors and a variety of short and long
+strokes[@savery:robotic].
 
-Here's few things we haven't explained here but might in future:
+Link to video [here](https://www.dropbox.com/s/fu38a4jx1ph0x9t/Tesseract%20POC.mp4?dl=0)
 
-- lists (just like this one)
-- figure and section references
-- including LaTeX maths
-- how to convert from docx to markdown
+![Rehearsing with the robot painting arm](media/performance2.png){#fig:performance2 width="0.5\\columnwidth"}
 
-This is a living document and it is hoped that any authors (such as you!) who try it out might provide feedback (e.g., you could make an [issue on the template repository](https://github.com/cpmpercussion/chroma-template/issues)) and help us to improve this template for future authors and potentially other publications.
+![Completed canvas](media/canvas.png){#fig:canvas width="0.5\\columnwidth"}
+
+## Reflection
+
+The absence of a visual component from the interface in this work
+allowed for a deeper investment into the audio mappings. Since this
+collaboration followed the demonstration video recording, many of the
+physical and virtual parameters were already flushed out and familiar.
+This allowed the first author to focus more on the musical aspects of
+the performance whilst becoming accustomed to responding to a robotic
+arm collaborator.
+
+The physical manipulation of the interface became somewhat easier after
+re-evaluating the demonstration video recording and relocating the
+sensors to different parts of the casing. We moved the push button panel
+was moved slightly higher up the bow to stop the right hand pinkie from
+involuntarily suppressing the outer most button during bow changes and
+lifts. The potentiometer slider was also moved slightly to the left,
+away from the bow screw to allow for better reach from the right hand
+middle finger, which is used to manipulate the sensor.
+
+# Conclusion and Future Work
+
+The wireless audio-visual violin bow interface described in this paper
+has laid a strong foundation for the next iteration of this ongoing
+research project. This prototype has been a robust proof of concept,
+showing that a wireless sensor enhanced interface can be successfully
+manipulated in real-time by a violinist's right hand fingers within a
+variety live performance situations. The work-in-progress prototype has
+also successfully demonstrated that both audio and visuals can be
+concurrently developed and processed, opening up a wide potential for
+future creative output and interactive audio-visual system design.
+
+A more recent version of the interface is using a silicone encasement
+for the sensors, which can slide on and off the bow frog. This more
+flexible material allows for discrepancies in bow size whilst retaining
+the sensors in place securely during a live performance situation. Two
+more sensors have been added to this version; a force sensor, that is
+fitted on the outside of the silicone casing bellow the bow frog for
+manipulation with the right hand thumb and a 3-axis acceleromter,
+mounted on the side of the Arduino Fio board. The latter, with
+representation of nuanced gestures through its data flow, will require a
+considerable amount of practice and performance experience to fully
+develop and master. Two Flora neopixel LEDs have also been added for
+visual feedback so as to avoid external help and create a more trusting
+relationship between the system and the performer[@kimura:creative].
+
+The design focus for future works is predominantly preoccupied with
+software mappings. The initial steps are aimed at developing a modular
+approach to both audio and visual mappings for each sensor, similar to
+approaches taken by Bonger and Harris in the development of the
+*Video-Organ*[@bongers:structured]. This will allow for spontaneity in
+live performance situations, easier collaborations with other artists
+and propel robust composition ideas. After this design process, we will
+focus on developing a more autonomous software system, where the audio
+and visual elements will have some component of agency and interaction,
+resembling the directions taken by some of the works incorporating
+Ilsar's *AirSticks* such as *H2.O* [@ilsar:airsticks].
+
+# Acknowledgments
+
+This research is supported by an Australian Government Research Training
+Program Scholarship.
+
+[^1]: <https://docs.cycling74.com/max8/vignettes/live_object_model>
+
+[^2]: Adafruit Slider Trinkey - USB NeoPixel Slide Potentiometer
+
+[^3]: Vanki Arduino keypad 4 Button Key Module Switch Keyboard for UNO
+    MEGA2560
+
+[^4]: <https://www.digi.com/resources/examples-guides/basic-xbee-zb-zigbee-(series-2)-chat>
