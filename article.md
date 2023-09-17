@@ -19,9 +19,9 @@ classoption: 12pt
 secnumdepth: 3
 reference-section-title: 'References'
 year: 2023
-volume: XX
-number: X
-article-no: X
+volume: 39
+number: 2
+article-no: 3
 date: '2023-07-13'
 accepted-date: '2023-08-04'
 published-date: '2023-10-09'
