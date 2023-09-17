@@ -1,19 +1,12 @@
 ---
-title: 'A Sample Chroma Article and Template Instructions'
+title: 'Enhancing Violin Performance through Real-Time Interaction: Design and Evaluation of a Wireless Audio-Visual Interface'
 author: 
-    - name: Fake Author
-      affiliation: Fake University
-      orcid: https://orcid.org/0000-0000-0000-0000
-      city: Coolac
+    - name: Anna Savery
+      affiliation: University of Technology Sydney
+      city: Sydney
       country: Australia
-      email: fake.author@fake.edu.au
-    - name: Another Phony
-      affiliation: Phony Studios
-      orcid: https://orcid.org/0000-0000-0000-0000
-      city: Esperance
-      country: Australia
-      email: aphony@fakemail.com
-author-header: F. Author & A. Phony
+      email: saveryanna@gmail.com
+author-header: A. Savery
 abstract: |
     This paper presents a detailed description of the development of a wireless audio-visual interface that is integrated with a violin bow. 
     This interface is a work-in-progress prototype resulting from a practice-based research project into optimal physical design and software mappings for the virtuoso string player.
@@ -38,14 +31,12 @@ published-date: '2023-10-09'
 
 Acoustic bowed string instruments have been enhanced with a variety of
 technologies as a means of gestural analysis and new expressive
-possibilities by many researchers[@overholt:advancements]
-[@young:hyperbow] [@bevilacqua:augmented] [@machover:hyperinstrument]
-[@rose:interactive] [@kimura:extracting]. Primarily, these technologies
+possibilities by many researchers [@overholt:advancements; @young:hyperbow; @bevilacqua:augmented; @machover:hyperinstrument; @rose:interactive; @kimura:extracting]. Primarily, these technologies
 have consisted of various sensors analysing the string player's physical
 idiosyncrasies as well as the inherent physics of the instrument
-itself[@overholt:musical][@miranda:new]. The chosen sensors are
+itself [@overholt:musical; @miranda:new]. The chosen sensors are
 integrated with the body or the bow of the instrument and in some cases,
-the performing artist[@reid:women][@van:musicjacket]. The collected
+the performing artist [@reid:women; @van:musicjacket]. The collected
 sensor data is mapped within an appropriate musical software environment
 aiming to create a novel, meaningful and expressive creative output.
 Although multiple and varied approaches to augmenting the acoustic
@@ -72,36 +63,36 @@ Miranda and Wanderley categorise different types of musical interfaces,
 with augmented, hyper or hybrid instruments being those that extend the
 possibilities of an acoustic instrument through the addition of multiple
 sensors, whilst retaining the instruments original sound and performance
-gestures[@miranda:new]. Significant developments include Diana Young's
-*Hyperbow Controller*[@young:hyperbow][@young:classification], Machover
-and Chung's *Hypercello*[@levenson:taming][@paradiso:musical], *vBow*
-developed by Nichols[@nichols:vbow] and Bevilaqua's *Augmented
-Violin*[@bevilacqua:augmented].With the sensors integrated directly into
+gestures [@miranda:new]. Significant developments include Diana Young's
+*Hyperbow Controller* [@young:hyperbow; @young:classification], Machover
+and Chung's *Hypercello* [@levenson:taming; @paradiso:musical], *vBow*
+developed by Nichols [@nichols:vbow] and Bevilaqua's *Augmented
+Violin* [@bevilacqua:augmented].With the sensors integrated directly into
 the acoustic instrument, these new interfaces are designed for detailed
-analysis of intricate real-time playing gestures[@bevilacqua:augmented],
+analysis of intricate real-time playing gestures [@bevilacqua:augmented],
 augmenting the possibilities of the instrument, whilst preserving the
 performer's natural relationship with the instrument.
 
 Building on these concepts but with the design consideration of minimal
 invasion to the acoustic instrument are Kimura's *Augmented Violin
-Glove*[@kimura:extracting] and Reid's *MIGSI*[@Reid:2016] which hold the
+Glove* [@kimura:extracting] and Reid's *MIGSI* [@Reid:2016] which hold the
 sensor technology inside a custom designed housing that is made to be
 both easily integrated and removed. Bevilacqua discusses another
 approach to augmenting an acoustic instrument which incorporates
 interactive sensors such as FSRs, push buttons and
-sliders[@bevilacqua:augmented].
+sliders [@bevilacqua:augmented].
 
 Although both approaches aim at enhancing and expanding the possibility
-of an acoustic instrument[@machover:interactive], the latter adds new
+of an acoustic instrument [@machover:interactive], the latter adds new
 gestures for the
-performer[@bevilacqua:augmented][@overholt:advancements]. Ko and
-Oehlberg's *TRAVIS II*[@ko:touch], allows the performer to trigger a
+performer [@bevilacqua:augmented; @overholt:advancements]. Ko and
+Oehlberg's *TRAVIS II* [@ko:touch], allows the performer to trigger a
 selection of audio and visual presets via four FSRs. The interface
 technology, designed to augment the fingerboard of the violin, with the
 exception of the custom made sensing fingerboard itself, by using 3D
 printed clamps allows for complete removal of all other sensor
-technology from the body of the violin . Overholt's *The Overtone
-Fiddle*[@overholt:overtone] combines the retention of traditional
+technology from the body of the violin. Overholt's *The Overtone
+Fiddle* [@overholt:overtone] combines the retention of traditional
 technique as well as introducing new extended performance gestures.
 Though the Overtone Fiddle allows performer control through traditional
 violin technique, it is an entirely new custom designed instrument with
@@ -109,15 +100,15 @@ extensive augmentation capabilities. Despite the variations in physical
 design considerations, these interfaces all communicate sensor data to
 appropriate musical software environments which is then used to
 transform the traditional acoustic capabilities of the instrument into
-new musical outcomes[@machover:hyperinstrument]. These two design
+new musical outcomes [@machover:hyperinstrument]. These two design
 components are therefore of equal significance within the development of
 a new musical interface. In the case of concurrent dynamic audio and
 visual software mappings, various approaches have been explored,
 including Ali Momeni and Cyrille Henry's introduction of a *Dynamic
-Independent Visual Mapping Layer*[@momeni:dynamic], Jaroslaw
-Kapuscinski's *Intermedia*[@savery:intermedia][@kapuscinski:mudras]
-Bert Bongers and Yolande Harris' *Video-Organ*[@bongers:structured] as
-well as the more recent *AirSticks*[@ilsar:airsticks] by Alon Ilsar with
+Independent Visual Mapping Layer* [@momeni:dynamic], Jaroslaw
+Kapuscinski's *Intermedia* [@savery:intermedia; @kapuscinski:mudras]
+Bert Bongers and Yolande Harris' *Video-Organ* [@bongers:structured] as
+well as the more recent *AirSticks* [@ilsar:airsticks] by Alon Ilsar with
 real-time interactive visuals designed by Andrew Bluff, Matthew Hughes
 and others. Our work-in-progress ambitiously aims at incorporating
 elements from all of these design approaches into one small yet robust
@@ -164,7 +155,7 @@ of live violin audio were recorded and then manipulated by the sensors
 which were either attached to a breadboard or simply laid out on a desk.
 This physical and software prototyping process lasted about three
 months, involving a cyclical practice based research approach of
-practice, theory and evaluation[@candy:practice][@candy:guide], where an
+practice, theory and evaluation [@candy:practice; @candy:guide], where an
 idea for an audio-visual work would be realised and tested, accumulating
 in a series of Max abstractions and an Arduino sketch that could then be
 used in a larger, more cohesive composition. As the music became
@@ -207,7 +198,7 @@ software mappings in order to achieve robust and creatively meaningful
 results. We decided to approach this problem using a practice led
 trajectory, where a live audio-visual work for solo violin and the
 interface was used as a means to develop a series of criteria for
-software mappings and compositional approaches[@candy:practice].
+software mappings and compositional approaches [@candy:practice].
 
 ![An abstraction for receiving sensor data from Arduino software](media/serial_max.png){#fig:serial_max}
 
@@ -228,14 +219,14 @@ a range between 0 and 3, acting as a secondary series of buttons, with
 each integer linked to a direct parameter, such as opening and closing
 of a gate object or starting and stopping playback of a buffer.
 
-![Max for Live patch with audio mappings](media/audio.png){#fig:audio width="1\\columnwidth"}
+![Max for Live patch with audio mappings](media/audio.png){#fig:audio}
 
 ### Visual Mapping
 
 All visual elements for this initial prototype were processed in Jitter
 and consisted of video footage. A variety of processing techniques were
 explored, such as cross-fading between multiple video streams and
-brightness and controlling contrast and saturation using the jit.brcosa
+brightness and controlling contrast and saturation using the `jit.brcosa`
 object. These techniques were well suited to being controlled by the
 potentiometer slider with its analog data stream being easily scaled to
 range from 0. to 1.
@@ -302,6 +293,7 @@ into an ending. The video footage played out to the end and came to a
 natural pause as the patch stopped.
 
 Link to video [here](https://www.dropbox.com/s/yk6e073fcjxtjfu/NIME_demo.mp4?dl=0)
+<!-- TODO: fix this video link. -->
 
 ![Demonstration video recording](media/Performance1.png){#fig:Performance1 width="0.6\\columnwidth"}
 
@@ -343,9 +335,10 @@ the recorded audio samples would start looping one by one, thickening
 out the sonic texture more and more, as the robotic arm added yellow and
 then red. The piece finished on a large crescendo as the canvas filled
 with vibrant colors and a variety of short and long
-strokes[@savery:robotic].
+strokes [@savery:robotic].
 
-Link to video [here](https://www.dropbox.com/s/fu38a4jx1ph0x9t/Tesseract%20POC.mp4?dl=0)
+Link to video [here](https://www.dropbox.com/s/fu38a4jx1ph0x9t/Tesseract%20POC.mp4?dl=0) 
+<!-- TODO: fix this video link. -->
 
 ![Rehearsing with the robot painting arm](media/performance2.png){#fig:performance2 width="0.5\\columnwidth"}
 
@@ -394,13 +387,13 @@ representation of nuanced gestures through its data flow, will require a
 considerable amount of practice and performance experience to fully
 develop and master. Two Flora neopixel LEDs have also been added for
 visual feedback so as to avoid external help and create a more trusting
-relationship between the system and the performer[@kimura:creative].
+relationship between the system and the performer [@kimura:creative].
 
 The design focus for future works is predominantly preoccupied with
 software mappings. The initial steps are aimed at developing a modular
 approach to both audio and visual mappings for each sensor, similar to
 approaches taken by Bonger and Harris in the development of the
-*Video-Organ*[@bongers:structured]. This will allow for spontaneity in
+*Video-Organ* [@bongers:structured]. This will allow for spontaneity in
 live performance situations, easier collaborations with other artists
 and propel robust composition ideas. After this design process, we will
 focus on developing a more autonomous software system, where the audio
