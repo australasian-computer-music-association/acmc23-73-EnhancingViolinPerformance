@@ -57,7 +57,7 @@ design and output directions.
 
 ![Wireless Audio-Visual Violin Bow Interface](media/newPrototype.jpg){#fig:newPrototype}
 
-# RELATED WORK
+# Related Work
 
 Miranda and Wanderley categorise different types of musical interfaces,
 with augmented, hyper or hybrid instruments being those that extend the
@@ -108,7 +108,7 @@ including Ali Momeni and Cyrille Henry's introduction of a *Dynamic
 Independent Visual Mapping Layer* [@momeni:dynamic], Jaroslaw
 Kapuscinski's *Intermedia* [@savery:intermedia; @kapuscinski:mudras]
 Bert Bongers and Yolande Harris' *Video-Organ* [@bongers:structured] as
-well as the more recent *AirSticks* [@ilsar:airsticks] by Alon Ilsar with
+well as the more recent *AirSticks* [@ilsar:airsticks; @IlsarCC2015; @ailsar2014] by Alon Ilsar with
 real-time interactive visuals designed by Andrew Bluff, Matthew Hughes
 and others. Our work-in-progress ambitiously aims at incorporating
 elements from all of these design approaches into one small yet robust
@@ -262,8 +262,8 @@ and visualisations.
 
 ## Demonstration Recording
 
-In June of 2022A, we filmed a live recording of a demonstration video at
-the University of Technology Sydney . The composition for solo violin
+In June of 2022, we filmed a live recording of a demonstration video at
+the University of Technology Sydney[^utsdemo]. The composition for solo violin
 and interface was approximately four minutes in length, and consisted of
 prerecorded viola samples, live audio sampling and processing and live
 video processing. The composition was a culmination of the theoretical
@@ -292,8 +292,7 @@ out the layers and creating a natural decrease in volume, descending
 into an ending. The video footage played out to the end and came to a
 natural pause as the patch stopped.
 
-Link to video [here](https://www.dropbox.com/s/yk6e073fcjxtjfu/NIME_demo.mp4?dl=0)
-<!-- TODO: fix this video link. -->
+[^utsdemo]: Demonstration video of audio-visual violin bow interface: <https://doi.org/10.5281/zenodo.8352734>
 
 ![Demonstration video recording](media/Performance1.jpg){#fig:Performance1 width="0.6\\columnwidth"}
 
@@ -315,7 +314,7 @@ manipulate the interface sensors.
 
 Similar to the demonstration video, this was mostly a free
 improvisation, with a structure revolving around a time constraint of
-approximately 8 minutes. This is approximately how long it took the
+approximately 8 minutes[^paintingarm]. This is approximately how long it took the
 robotic arm to fill the canvas using all four available paint colours.
 Audio effects were worked out to align with paint color changes and the
 corresponding layering and mixing of paint on canvas. Hence, the piece
@@ -337,10 +336,9 @@ then red. The piece finished on a large crescendo as the canvas filled
 with vibrant colors and a variety of short and long
 strokes [@savery:robotic].
 
-Link to video [here](https://www.dropbox.com/s/fu38a4jx1ph0x9t/Tesseract%20POC.mp4?dl=0) 
-<!-- TODO: fix this video link. -->
-
-![Rehearsing with the robot painting arm](media/performance2.jpg){#fig:performance2 width="0.5\\columnwidth"}
+[^paintingarm]: Demonstration video of painting robot arm and audio-visual violin bow interface: <https://doi.org/10.5281/zenodo.8352723>
+ 
+![Rehearsing with the robot painting arm. Video: <https://doi.org/10.5281/zenodo.8352723>](media/performance2.jpg){#fig:performance2 width="0.5\\columnwidth"}
 
 ![Completed canvas](media/canvas.jpg){#fig:canvas width="0.5\\columnwidth"}
 
