@@ -55,7 +55,7 @@ reflecting on each situation from the first author's
 researcher/practitioner perspective and concluding with future creative
 design and output directions.
 
-![Wireless Audio-Visual Violin Bow Interface](media/newPrototype.png){#fig:newPrototype}
+![Wireless Audio-Visual Violin Bow Interface](media/newPrototype.jpg){#fig:newPrototype}
 
 # RELATED WORK
 
@@ -188,7 +188,7 @@ optimal one. However, in a live performance setting, these adhesives
 were not secure enough and both the casing and the sensors shifted
 around too much.
 
-![Examples of 3D printed casings](media/3d-casings.png){#fig:3d-casings}
+![Examples of 3D printed casings](media/3d-casings.jpg){#fig:3d-casings}
 
 ## Software Design
 
@@ -200,7 +200,7 @@ trajectory, where a live audio-visual work for solo violin and the
 interface was used as a means to develop a series of criteria for
 software mappings and compositional approaches [@candy:practice].
 
-![An abstraction for receiving sensor data from Arduino software](media/serial_max.png){#fig:serial_max}
+![An abstraction for receiving sensor data from Arduino software](media/serial_max.jpg){#fig:serial_max}
 
 ### Audio Mapping
 
@@ -219,7 +219,7 @@ a range between 0 and 3, acting as a secondary series of buttons, with
 each integer linked to a direct parameter, such as opening and closing
 of a gate object or starting and stopping playback of a buffer.
 
-![Max for Live patch with audio mappings](media/audio.png){#fig:audio}
+![Max for Live patch with audio mappings](media/audio.jpg){#fig:audio}
 
 ### Visual Mapping
 
@@ -243,7 +243,7 @@ allowed for more elaborate mappings within each section. However, this
 also created a very rigid structure, leaving little room for
 spontaneity.
 
-![Max for Live patch with video mappings using Jitter](media/video.png){#fig:video width="1\\columnwidth"}
+![Max for Live patch with video mappings using Jitter](media/video.jpg){#fig:video width="1\\columnwidth"}
 
 # Creative Outputs
 
@@ -295,7 +295,7 @@ natural pause as the patch stopped.
 Link to video [here](https://www.dropbox.com/s/yk6e073fcjxtjfu/NIME_demo.mp4?dl=0)
 <!-- TODO: fix this video link. -->
 
-![Demonstration video recording](media/Performance1.png){#fig:Performance1 width="0.6\\columnwidth"}
+![Demonstration video recording](media/Performance1.jpg){#fig:Performance1 width="0.6\\columnwidth"}
 
 ## Reflection
 
@@ -340,9 +340,9 @@ strokes [@savery:robotic].
 Link to video [here](https://www.dropbox.com/s/fu38a4jx1ph0x9t/Tesseract%20POC.mp4?dl=0) 
 <!-- TODO: fix this video link. -->
 
-![Rehearsing with the robot painting arm](media/performance2.png){#fig:performance2 width="0.5\\columnwidth"}
+![Rehearsing with the robot painting arm](media/performance2.jpg){#fig:performance2 width="0.5\\columnwidth"}
 
-![Completed canvas](media/canvas.png){#fig:canvas width="0.5\\columnwidth"}
+![Completed canvas](media/canvas.jpg){#fig:canvas width="0.5\\columnwidth"}
 
 ## Reflection
 
